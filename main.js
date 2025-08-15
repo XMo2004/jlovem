@@ -37,6 +37,13 @@ window.addEventListener("load", ()=>{
         filter: "saturate(1.1)" // 稍微增强饱和度
       }, 0.1) // 稍微延迟开始，创建层次感
       
+      // 黑白效果淡入动画（0.5秒持续时间）
+      .to(".section.hero-section", {
+        filter: "saturate(1.1) grayscale(1)", // 添加黑白效果
+        duration: 0.5, // 0.5秒的淡入时间
+        ease: "power2.inOut" // 平滑的缓动效果
+      }, 0.2) // 在第二阶段稍后开始
+      
       // 第三阶段：图片容器淡出
       .to(".image-container", {
         autoAlpha: 0,

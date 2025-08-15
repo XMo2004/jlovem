@@ -63,6 +63,7 @@ body {
     background-size: cover;
     overflow: hidden;
     height: 100vh;
+    transition: filter 0.5s ease-in-out;
 }
 
 .image-container {
