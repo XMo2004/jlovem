@@ -12,6 +12,12 @@ body {
     font-weight: 400;
     font-style: normal;
     font-family: "Roboto", system-ui;
+    /* 移动设备优化 */
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    overflow-x: hidden;
 }
 
 .wrapper,
@@ -85,6 +91,16 @@ body {
     object-position: center center;
     position: relative;
     z-index: 1;
+    /* 移动设备图片优化 */
+    max-width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .about-section{
@@ -102,11 +118,109 @@ body {
     line-height: 2.5rem;
 }
 
-@media (max-width: 575.98px) {
-    .intro h1 {
-        font-size: 1.5rem;
+/* 移动设备适配 */
+@media (max-width: 768px) {
+    .intro {
+        padding: 20px;
     }
+    
+    .intro h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
     .intro p {
-        font-size: 4rem;
+        font-size: 3rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+    
+    .about-section {
+        padding: 80px 20px;
+    }
+    
+    .about-section p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        padding: 0 10px;
+    }
+    
+    .content .section.hero-section {
+        height: 100vh;
+        background-attachment: scroll; /* 移动设备上禁用固定背景 */
+    }
+    
+    .image-container {
+        height: 100vh;
+    }
+    
+    .image-container img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* 小屏幕手机适配 */
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 1rem;
+    }
+    
+    .intro p {
+        font-size: 2.5rem;
+    }
+    
+    .about-section {
+        padding: 60px 15px;
+    }
+    
+    .about-section p {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+}
+
+/* 超小屏幕适配 */
+@media (max-width: 320px) {
+    .intro {
+        padding: 15px;
+    }
+    
+    .intro h1 {
+        font-size: 0.9rem;
+    }
+    
+    .intro p {
+        font-size: 2rem;
+    }
+    
+    .about-section {
+        padding: 50px 10px;
+    }
+    
+    .about-section p {
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+    }
+}
+
+/* 横屏模式适配 */
+@media (max-height: 500px) and (orientation: landscape) {
+    .intro {
+        height: 100vh;
+        justify-content: center;
+    }
+    
+    .intro h1 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .intro p {
+        font-size: 2rem;
+    }
+    
+    .about-section {
+        padding: 40px 20px;
     }
 }
